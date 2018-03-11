@@ -4,8 +4,6 @@
 ### Poison Distribution
 ### Binomial Distribution
 
-## <a name="descriptive"></a>Descriptive Statistics
-
 ### Measures of Center
 Idea of typical value.
 
