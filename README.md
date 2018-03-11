@@ -4,9 +4,6 @@
 ### Poison Distribution
 ### Binomial Distribution
 
-### Measures of Center
-Idea of typical value.
-
 **Mean:** The numerical average.
 ```
 dataset.mean()
