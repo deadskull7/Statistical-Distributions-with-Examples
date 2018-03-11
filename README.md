@@ -1,8 +1,8 @@
 # Statistical-Distributions-with-Examples
 
-## Normal Distribution
-## Poison Distribution
-## Binomial Distribution
+### Normal Distribution
+### Poison Distribution
+### Binomial Distribution
 
 ## <a name="descriptive"></a>Descriptive Statistics
 
