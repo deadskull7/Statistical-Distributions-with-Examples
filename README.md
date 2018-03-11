@@ -73,6 +73,7 @@ mean, cov = [0, 2], [(1, .5), (.5, 1)]
 x, y = np.random.multivariate_normal(mean, cov, size=50).T
 ax = sns.kdeplot(x)
 ```
+![](https://seaborn.pydata.org/_images/seaborn-kdeplot-2.png)
 **RegressionPlot:** Plot data and a linear regression model fit.
 ```
 import pandas as pd
