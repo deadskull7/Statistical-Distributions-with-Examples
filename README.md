@@ -43,28 +43,33 @@ dataset["subset"].describe();
 
 **IQR:**  Interquartile Range. Distance between the 3rd and the 1st quartile. Describes the data.
 
-**Boxplot:** A visual representation of the five number summary and IQR.
+**RegressionPlot:** Plot data and a linear regression model fit.
+```
+import pandas as pd
+x, y = pd.Series(x, name="x_var"), pd.Series(y, name="y_var")
+ax = sns.regplot(x=x, y=y, marker="+")
+```
+![](https://seaborn.pydata.org/_images/seaborn-regplot-3.png)
 
+**TimeSeriesPlot:** Plot one or more timeseries with flexible representation of uncertainty.
 ```
-dataset.boxplot(column="subset",
-                return_type='axes',
-                fiqsize=(8,8))
+gammas = sns.load_dataset("gammas")
+ax = sns.tsplot(time="timepoint", value="BOLD signal",unit="subject", condition="ROI",data=gammas)
+```
+![](https://seaborn.pydata.org/_images/seaborn-tsplot-2.png)
 
-plt.text(x=0.74, y=22.25, s="3rd Quartile")
-plt.text(x=0.8, y=18.75, s="Median")
-plt.text(x=0.75, y=15.5, s="1st Quartile")
-plt.text(x=0.9, y=10, s="Min")
-plt.text(x=0.9, y=33.5, s="Max")
-plt.text(x=0.7, y=19.5, s="IQR", rotation=90, size=25)
+**HeatMap:**
 ```
-**BarPlot:** Show point estimates and confidence intervals as rectangular bars.
+sns.heatmap(flights, annot=True, fmt="d")
 ```
-sns.barplot(x="day", y="total_bill", hue="weekend", data=tips, dodge=False)
-```
+![](https://seaborn.pydata.org/_images/seaborn-heatmap-5.png)
+
 **CountPlot:** Show the counts of observations in each categorical bin using bars.
 ```
 sns.factorplot(x="class", hue="who", col="survived",data=titanic, kind="count",size=4, aspect=.7);
 ```
+![](https://seaborn.pydata.org/_images/seaborn-countplot-6.png)
+
 **KdePlot:** Fit and plot a univariate or bivariate kernel density estimate.
 ```
 import numpy as np; np.random.seed(10)
@@ -73,18 +78,15 @@ mean, cov = [0, 2], [(1, .5), (.5, 1)]
 x, y = np.random.multivariate_normal(mean, cov, size=50).T
 ax = sns.kdeplot(x)
 ```
-![](https://seaborn.pydata.org/_images/seaborn-kdeplot-2.png)
-**RegressionPlot:** Plot data and a linear regression model fit.
+![](https://seaborn.pydata.org/_images/seaborn-kdeplot-1.png)
+
+**BarPlot:** Show point estimates and confidence intervals as rectangular bars.
 ```
-import pandas as pd
-x, y = pd.Series(x, name="x_var"), pd.Series(y, name="y_var")
-ax = sns.regplot(x=x, y=y, marker="+")
+sns.barplot(x="day", y="total_bill", hue="weekend", data=tips, dodge=False)
 ```
-**TimeSeriesPlot:** Plot one or more timeseries with flexible representation of uncertainty.
-```
-gammas = sns.load_dataset("gammas")
-ax = sns.tsplot(time="timepoint", value="BOLD signal",unit="subject", condition="ROI",data=gammas)
-```
+![](https://seaborn.pydata.org/_images/seaborn-barplot-10.png)
+
+
 
 **Variance:** The average of the squared deviations (differences) from the mean.  A numerical value used to indicate how widely individuals in a group vary.
 ```
